@@ -1,3 +1,75 @@
+# Recap
+
+## 1. Home Page (Component)
+
+- Create a `Home` component in the pages folder
+  - Give your component a title using a heading element
+  - Add the following text within a parapgraph tag - Today we will be covering:
+  - And your Home component to your `App`
+
+## 2. ListItem Component
+
+- Create a `ListItem` component in the components folder
+- Add your ListItem component to your Home Component
+- Create an variable to hold our list items data called `initialListItemsState` (copy and paste)
+  - each object will have three keys `id`, `text` and `completed`
+- Use the useState hook to create a `listItems` state
+- Set the initial value of the state you just created to `initialListItemsState`
+
+- Within your return statement **map** the `listItems` and return a `<div>` element.
+- In your div element
+  - Add a p tag which will display the listItem text property
+  - Below the p tag add a span tag with the text `Completed: ` followed by the a ternary statement that will display whether or not the listItem has been completed
+  - Below the span tag add a button which contains the text `Toggle`
+
+The button element will need an event handler
+
+- Create a function called `handleClick`
+- This function will take one argument called `id`
+- Within your function create a new variable called `newListItems`
+- Map over the `listItems` state and for each individual item we want to check whether item's id is equal to the id that will be passed to this function as an argument
+  - If the id's are the same then we'll spread the item state and toggle the `completed` value
+  - If the ids are not the same we will return the item without any modifications
+- Lastly we want to set our listItems state with the newListItems value within the handleClick function
+- And add the event handler to our button element
+
+**NB:** We could change the styling based off of the `completed` state here instead
+
+## 3. CatFact Component
+
+- Create a `CatFact` component in the components folder
+- Add your CatFact component to your Home Component
+- Create a catfact state using useState, set the initial value to an empty string
+- In the return statement add a paragraph with the text: Here's a random cat fact
+- Place your catfact state in another p tag underneath
+
+- Install axios `npm i axios`
+- Create a useEffect block
+- Use axios to make a get request to `https://catfact.ninja/fact?max_length=140` in your useEffect
+- Update your state based on the result of the get request
+
+**NB:** Extension: Add a button and create an event handler to fetch a new cat fact onClick
+
+## 4. About Page (Component)
+
+- Create an about component within the pages folder
+- Add some placeholder / lorem ipsum text
+
+## 5. React Router
+
+- Install react router `react-router-dom@5.3.3`
+- Import the **3** items you will need from react router into your App component
+  - Can we remember how to structure what will go within our return statement using the 3 imports we get from react router?
+
+**NB:** Extension: Add a nav that contain `Link` elements so we can switch between pages without manually changing the url
+
+<br />
+<br />
+
+---
+
+<br />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
